@@ -15,37 +15,60 @@
   }
  
 </script>
-    <div class="hero_area">
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-4">
-          <a class="navbar-brand" href="{% url 'home' %}">
-            <p class="header_title">ALEV DUMANOĞLU</p>
-          </a>
-          <div class="collapse navbar-collapse mt-0" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav">
-                <li class="nav-item {% if navbar == 'home' %} active {% endif %}">
-                  <a class="nav-link" href="{% url 'home' %}">ana sayfa</a>
-                </li>
-                <li class="nav-item {% if navbar == 'about' %} active {% endif %}">
-                  <a class="nav-link" href="{% url 'about' %}">
-                    ben kimim?
-                  </a>
-                </li>
-                <li class="nav-item {% if navbar == 'blog' %} active {% endif %}">
-                  <a class="nav-link" href="{% url 'blog' %}">
-                    yazılarım
-                  </a>
-                </li>
-                <li class="nav-item {% if navbar == 'contact' %} active {% endif %}">
-                  <a class="nav-link" href="{% url 'contact' %}">bana ulaşın</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
+
+<div class="rotate">
+  <a href="{% url 'home' %}">
+    <img src="{% static 'images/ad-logo.png' %}" alt="">
+  </a>
+</div>
+<nav class="navbar-expand-lg shadow-lg">
+          <span  class="navbar-brand">
+              <a href="index.html">ALEV DUMANOĞLU</a>
+              <br>
+              <small>Klİnİk Psİkolog - Eğİtİmcİ</small>
+          </span>
+      <div class="navbar-toggler-container">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item {% if navbar == 'home' %} active {% endif %}">
+              <a class="nav-link click-scroll" href="{% url 'home' %}">ana sayfa</a>
+            </li>
+
+              <li class="nav-item {% if navbar == 'home' %} active {% endif %}">
+                      <a class="nav-link click-scroll" href="{% url 'about' %}">BİYOGRAFİ</a>
+              </li>
+
+              <li class="nav-item">
+                      <a class="nav-link click-scroll" href="{% url 'blog' %}">Çalışmalar</a>
+              </li>
+
+              <!--<li class="nav-item">
+                  <a class="nav-link click-scroll" href="#section_4">İletişim</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link click-scroll dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">News</a>
+
+                  <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                      <li><a class="dropdown-item" href="news.html">News Listing</a></li>
+
+                      <li><a class="dropdown-item" href="news-detail.html">News Detail</a></li>
+                  </ul>
+              </li>-->
+
+              <li class="nav-item">
+                      <a class="nav-link click-scroll" href="{% url 'contact' %}">İLETİŞİM</a>
+              </li>
+
+              <!--<li class="nav-item ms-3">
+                  <a class="nav-link custom-btn custom-border-btn btn" href="donate.html">Donate</a>
+              </li>-->
+          </ul>
   </div>
+</nav>
