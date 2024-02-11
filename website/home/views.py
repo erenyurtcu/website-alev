@@ -32,5 +32,8 @@ def post_detail(request,pk):
     post = PostModel.objects.get(id=pk)
     context = {
         'post': post,
+        'navbar': 'blog',
     }
     return render(request, "blog/post-detail.html", context)
+
+

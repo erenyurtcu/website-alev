@@ -1,55 +1,5 @@
 {% load static %}
-<html lang="tr">
-{% include 'partials/base.html' %}
-<body>
-<div class="scrollTop" onclick="scrollToTop()"><img src="{% static 'images/chevron-up-solid.png' %}" alt="" style="width: 30px;height: 30px;"></div>
-<script type="text/javascript">
-  window.addEventListener('scroll',function(){
-    var scroll = document.querySelector('.scrollTop');
-    scroll.classList.toggle("active", window.scrollY > 100)
-  })
-  function scrollToTop(){
-    window.scrollTo({
-      top: 0 
-    })
-  }
-</script>
-<div class="hero_area">
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container pt-4">
-          <a class="navbar-brand" href="{% url 'home' %}">
-            <p style="color: black;">ALEV DUMANOĞLU</p>
-          </a>
-
-          <div class="collapse navbar-collapse mt-0" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'home' %}">ana sayfa</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'about' %}">
-                    ben kimim?
-                  </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'blog' %}">
-                    yazılarım
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'contact' %}">bana ulaşın</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
-
+{% include 'partials/nav.html' %}
         {% block content %}
             <div class="container ml-2 mt-1">
                 <div class="row">
@@ -71,4 +21,3 @@
             </div>
             {% endblock %}      
         </body>
-</html>
