@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="tr">
+{% include 'partials/base.html' %}
+
+<style>
+    body{
+        background-color: var(--section-bg-color);
+    }
+
+    .color-home{
+        color: var(--secondary-color);
+    }
+    .color-home:hover{
+        color: var(--primary-color);
+    }
+
+    .centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make sure the body covers the whole viewport height */
+    margin: 0; /* Remove default margin */
+    text-align: center;
+    opacity: 0; /* Initially transparent */
+    color: var(--primary-color);
+    transition: opacity 2s ease;
+    position: relative; /* Add relative positioning */
+}
+
+.anaSayfa {
+    position: absolute;
+    bottom: 38%; /* Position at the bottom */
+    width: 100%; /* Ensure it takes up full width */
+    text-align: center;
+    opacity: 0; /* Initially transparent */
+    transition: opacity 3s ease;
+}
+
+/* Show the elements */
+.centered-content.show,
+.anaSayfa.show {
+    opacity: 1;
+}
+
+
+
+    #mail-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: mail-move 5s infinite;
+    }
+
+    #line-container {
+    position: absolute;
+    left: -70px;
+    width: 60px;
+    overflow: hidden;
+    }
+
+    #line-container .line {
+    border: 1px solid transparent;
+    margin-top: 5px;
+    width: 70px;
+    height: 5px;
+    background: var(--primary-color);
+    border-radius: 6px;
+    }
+
+    #mail {
+    width: 60px;
+    height: 45px;
+    border: solid 5px var(--primary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    }
+
+    #mail:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-top: solid 5px var(--primary-color);
+    border-left: solid 5px var(--primary-color);
+    transform: rotate(45deg);
+    top: 18px;
+    left: 12px;
+    } 
+
+    #mail:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: solid 5px var(--primary-color);
+    transform: rotate(45deg);
+    top: -70px;
+    border-radius: 15px;
+    } 
+
+    .line-1 {
+    animation: line-1-move 5s infinite;
+    }
+
+    @keyframes line-1-move {
+    0% {
+        transform: translateX(-100%);
+    }
+    20% {
+        transform: translateX(100%);
+    }
+    20.0001% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(20%);
+    }
+    60% {
+        transform: translateX(20%);
+    }
+    80% {
+        transform: translateX(-100%);
+    }
+    80.1% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    }
+
+    .line-2 {
+    animation: line-2-move 5s infinite;
+    }
+
+    @keyframes line-2-move {
+    0% {
+        transform: translateX(-100%);
+    }
+    20% {
+        transform: translateX(100%);
+    }
+    20.0001% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(40%);
+    }
+    60% {
+        transform: translateX(40%);
+    }
+    80% {
+        transform: translateX(-100%);
+    }
+    80.1% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    }
+
+    .line-3 {
+    animation: line-3-move 5s infinite;
+    }
+
+    @keyframes line-3-move {
+    0% {
+        transform: translateX(-100%);
+    }
+    20% {
+        transform: translateX(100%);
+    }
+    20.0001% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(60%);
+    }
+    60% {
+        transform: translateX(60%);
+    }
+    80% {
+        transform: translateX(-100%);
+    }
+    80.1% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+    }
+
+    .line-4 {
+    animation: line-4-move 5s infinite;
+    }
+
+    @keyframes line-4-move {
+    0% {
+        transform: translateX(-80%);
+    }
+    20% {
+        transform: translateX(100%);
+    }
+    20.0001% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(120%);
+    }
+    60% {
+        transform: translateX(120%);
+    }
+    80% {
+        transform: translateX(-80%);
+    }
+    80.1% {
+        transform: translateX(80%);
+    }
+    100% {
+        transform: translateX(-120%);
+    }
+    }
+
+    .line-5 {
+    animation: line-5-move 5s;
+    }
+
+    @keyframes line-5-move {
+    0% {
+        transform: translateX(-80%);
+    }
+    20% {
+        transform: translateX(100%);
+    }
+    20.0001% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(150%);
+    }
+    60% {
+        transform: translateX(150%);
+    }
+    80% {
+        transform: translateX(-80%);
+    }
+    80.1% {
+        transform: translateX(80%);
+    }
+    100% {
+        transform: translateX(-120%);
+    }
+    }
+
+    @keyframes mail-move {
+    0% {
+        opacity: 0;
+        left: 3%;
+    }
+    40% {
+        opacity: 1;
+        left: 50%;
+    }
+    60% {
+        left: 50%;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        left: 95%;
+    }
+    }
+</style>
+<script>
+    setTimeout(function() {
+        window.location.href = "{% url 'home' %}";
+    }, 10000);
+    setTimeout(function() {
+    var mailContainer = document.getElementById("mail-container");
+    mailContainer.style.display = "none";
+    }, 5000);
+    setTimeout(function() {
+        document.getElementById("e-mail-sent").classList.add("show");
+    }, 5000); 
+    setTimeout(function() {
+        document.getElementById("goHome").classList.add("show");
+    }, 6500); 
+</script>
+
+<body>
+    <div id="mail-container">
+        <div id="line-container">
+          <div class="line line-1"></div>
+          <div class="line line-4"></div>
+          <div class="line line-2"></div>
+          <div class="line line-5"></div>
+          <div class="line line-3"></div>
+        </div>
+        <div id="mail"></div>
+    </div>
+
+    <div>
+        <h1 class="centered-content" id="e-mail-sent">E-POSTA GÖNDERİLDİ</h1>
+        <h4 class="anaSayfa" id="goHome"><a href="{% url 'home'%}" class="color-home">Ana Sayfaya Dön</a></h4>
+    </div>
+</body>

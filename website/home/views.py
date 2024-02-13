@@ -1,3 +1,4 @@
+import time
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .models import PostModel,ContactModel
@@ -19,7 +20,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('contact')
+            return redirect('e-mail-sent')
  
     else:
         form = ContactForm()
@@ -35,5 +36,9 @@ def post_detail(request,pk):
         'navbar': 'blog',
     }
     return render(request, "blog/post-detail.html", context)
+
+def e_mail_sent(request):
+    return render(request,"e-mail-sent.html")
+
 
 
