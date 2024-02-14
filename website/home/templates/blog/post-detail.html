@@ -1,27 +1,23 @@
 {% load static %}
 {% include 'partials/nav.html' %}
-        {% block content %}
-            <div class="container ml-2 mt-1">
+{% block content %}
+    <section class="volunteer-section">
+        <div class="container">
+            <div class="custom-form volunteer-form mb-5 mb-lg-0"action="{% url 'contact' %}" method="POST" role="form">
                 <div class="row">
-                    <div class= "col-md-12 offset-md-2">
-                        <div class="card shadow mt-1 mb-3">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <small>{{ post.date_post }}</small>
-                                        <br>
-                                        <h4>{{ post.title }}</h4>
-                                        <p class="text-justify my-3 text-secondary">{{ post.content }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-9">
+                        <h4>{{ post.title }}</h4>
+                        <small>{{ post.date_post }}</small>
+                        <p class="text-justify my-3 text-secondary">{{ post.content }}</p>
                     </div>
                 </div>
+                <button onclick="window.history.back()" class="back-to-page-btn">&#10006;</button>
             </div>
-            {% endblock %}  
+        </div>
+    </section>
+{% endblock %}  
             
             
 
 {% include 'partials/footer.html' %}
-        </body>
+</body>

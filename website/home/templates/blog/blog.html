@@ -39,12 +39,31 @@
                             <small class="mb-2">{{ post.date_post }}</small>
                             <p>{{ post.content|truncatechars:230 }}</p>
                         </div>
-                        <a href="{% url 'postdetail' post.id %}" class="custom-btn btn">Devamını Gör</a>
+                        <a href="{% url 'postdetail' post.id %}" class="custom-btn btn" id="devamini_gor_{{ forloop.counter }}">Devamını Gör</a>
                     </div>
                 </div>
             </div>
-            
             {% endfor %}
+            
+            <script>
+                // Get all the "Devamını Gör" buttons
+                var buttons = document.querySelectorAll('.custom-btn');
+            
+                // Loop through each button and set a random background image, position, and rotation
+                buttons.forEach(function(button) {
+                    // Generate a random rotation degree
+                    var rotation = Math.floor(Math.random() * 360);
+            
+                    // Generate random X and Y positions
+                    var xPos = Math.floor(Math.random() * 100);
+                    var yPos = Math.floor(Math.random() * 100);
+            
+                    // Set background image, position, and rotation
+                    button.style.backgroundImage = "url('{% static 'images/ad-logo.png' %}')";
+                    button.style.backgroundPosition = xPos + "% " + yPos + "%";
+                    button.style.transform = "rotate(" + rotation + "deg)";
+                });
+            </script>
         </div>
     </div>
 </section>

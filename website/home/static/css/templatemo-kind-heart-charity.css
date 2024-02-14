@@ -106,6 +106,31 @@ body {
   background-color: #555;
 }
 
+.back-to-page-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px; /* Set width and height to create a circular button */
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+  background-color: var(--secondary-color);
+  border: none;
+  padding-top: 5px; /* Remove padding to make the button perfectly circular */
+  border-radius: 50%; /* Ensure the button is perfectly circular */
+  cursor: pointer;
+  z-index: 999; /* Ensures the button is above other content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 40px; /* Align the X symbol vertically */
+  transition: ease-in-out 0.5s;
+}
+
+.back-to-page-btn:hover {
+  background-color: var(--primary-color);
+}
+
 
 /*---------------------------------------
   TYPOGRAPHY               
