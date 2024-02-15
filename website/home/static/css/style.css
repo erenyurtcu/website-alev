@@ -1648,10 +1648,11 @@ button .form-control{
     margin-bottom: 2%;
 }
 
-  .centered-responsive{
+  .centered-responsive-contact-form{
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    margin-top: 1.5rem;
   }
   .map-set{
     width: 100%;
