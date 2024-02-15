@@ -93,3 +93,18 @@
         </div>
     </div>
 </footer>
+<div class="scrollTop" onclick="scrollToTop()"><img src="{% static 'images/chevron-up-solid.png' %}" alt="" style="width: 30px;height: 30px;"></div>
+<script type="text/javascript">
+  window.addEventListener('scroll',function(){
+    var scroll = document.querySelector('.scrollTop');
+    scroll.classList.toggle("active", window.scrollY > 500)
+  })
+  function scrollToTop(){
+    window.scrollTo({
+      top: 0 
+    })
+  }
+ 
+</script>
+</body>
+</html>

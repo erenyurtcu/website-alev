@@ -11,11 +11,12 @@ admin.site.site_header = "ALEV DUMANLIOĞLU"
 urlpatterns = [
     path("", views.home, name="home"),
     path("", views.home),
-    path("about", views.about, name="about"),
-    path("blog", views.blog, name="blog"),
-    path("post-detail/<int:pk>/" , views.post_detail, name="postdetail"),
-    path("contact", views.contact, name="contact"),
-    path('e-mail-sent/', views.e_mail_sent, name='e-mail-sent'),
+    path("biyografi", views.about, name="about"),
+    path("makaleler", views.blog, name="blog"),
+    path("makale-<int:pk>/" , views.post_detail, name="postdetail"),
+    path("iletisim", views.contact, name="contact"),
+    path('x/', views.e_mail_sent, name='e-mail-sent'),
+    path("calismalar", views.works, name="works"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

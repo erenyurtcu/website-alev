@@ -1,20 +1,20 @@
 {% load static %}
 {% include 'partials/nav.html' %}
 {% block content %}
-    <section class="volunteer-section">
-        <div class="container">
-            <div class="custom-form volunteer-form mb-5 mb-lg-0"action="{% url 'contact' %}" method="POST" role="form">
-                <div class="row">
-                    <div class="col-md-9">
-                        <h4>{{ post.title }}</h4>
-                        <small>{{ post.date_post }}</small>
-                        <p class="text-justify my-3 text-secondary">{{ post.content }}</p>
-                    </div>
+<section class="volunteer-section">
+    <div class="container">
+        <div class="custom-form volunteer-form mb-lg-0">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="color: var(--primary-color);">{{ post.title }}</h3>
+                    <small class="text-secondary">{{ post.date_post }}</small>
+                    <p class="my-2" style="color: black; font-size: 20px;">{{ post.content }}</p>
                 </div>
-                <button onclick="window.history.back()" class="back-to-page-btn">&#10006;</button>
             </div>
+            <button onclick="window.history.back()" class="back-to-page-btn">&#10006;</button>
         </div>
-    </section>
+    </div>
+</section>  
 {% endblock %}  
             
             

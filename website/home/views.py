@@ -40,5 +40,8 @@ def post_detail(request,pk):
 def e_mail_sent(request):
     return render(request,"e-mail-sent.html")
 
+def works(request):
+    return render(request,"works.html",{'navbar': 'works'})
+
 
 

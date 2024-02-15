@@ -137,10 +137,10 @@ body {
 -----------------------------------------*/
 .title-post{
   color: var(--primary-color);
+  transition: ease-in-out 0.35s;
 }
 .title-post:hover{
   color: var(--secondary-color);
-  transition: ease-in-out 0.25s;
 }
 
 h2,
@@ -528,10 +528,11 @@ strong {
   font-weight: var(--font-weight-bold);
   font-size: 40px;
   padding-top: 1.5%;
+  transition: 0.75s ease-in;
 }
 
 .navbar-brand a:hover{
-  transition: 1s ease-in-out;
+  transition: 1s ease-in;
   color: var(--dark-color);
 }
 
