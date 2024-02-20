@@ -1,8 +1,9 @@
 import time
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from .models import PostModel,ContactModel
+from .models import PostModel,PostWorksModel
 from .forms import ContactForm
+from django.core.mail import send_mail
 # Create your views here.
 
 def home (request):
@@ -20,14 +21,24 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            send_mail(  'Your message has been received',
+                        'Thank you for contacting us. We have received your message.',
+                        'djangosmtpdeneme@gmail.com',
+                        [form.cleaned_data['email']])
+            
+            send_mail(
+                'Websitenizde Yeni Bir İletişim Talebi',
+                f'İsim: {form.cleaned_data["name"]}\nEmail: {form.cleaned_data["email"]}\nKonu: {form.cleaned_data["subject"]}\nMesaj: {form.cleaned_data["content"]}',
+                'djangosmtpdeneme@gmail.com', 
+                ['djangosmtpdeneme@gmail.com'], 
+            )
+
             return redirect('e-mail-sent')
- 
     else:
         form = ContactForm()
-        context = {
-        'form': form
-    }
-    return render(request,"contact.html",{'form': form,'navbar': 'contact'})
+
+    return render(request, "contact.html", {'form': form, 'navbar': 'contact'})
+
 
 def post_detail(request,pk):
     post = PostModel.objects.get(id=pk)
@@ -41,7 +52,16 @@ def e_mail_sent(request):
     return render(request,"e-mail-sent.html")
 
 def works(request):
-    return render(request,"works.html",{'navbar': 'works'})
+    works = PostWorksModel.objects.all() 
+    return render(request,"works/works.html",{'works': works ,'navbar': 'works'})
+
+def works_detail(request,pk):
+    work = PostWorksModel.objects.get(id=pk)
+    context = {
+        'work': work,
+        'navbar': 'works',
+    }
+    return render(request, "works/work-detail.html", context)
 
 
 

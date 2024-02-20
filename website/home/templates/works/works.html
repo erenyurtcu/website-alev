@@ -1,0 +1,25 @@
+{% load static %}
+{% include 'partials/nav.html' %}
+{% block content %} 
+<section class="pb-4" style="background-color: rgba(243, 152, 26, 0.3);">
+    <div class="container">
+        <div class="row">
+            {% for work in works %}
+            <div class="col-lg-6 col-md-6 col-12 mt-4 mb-lg-0">
+                <div class="custom-block-wrap">
+                    <div class="custom-block">
+                        <div class="custom-block-body">
+                            <h5 class="mb-1"><a href="" class="title-post">{{ work.title }}</a></h5>
+                            <small class="mb-2 text-secondary">{{ work.date_post }}</small>
+                            <p style="color: black;">{{ work.content|truncatechars:230 }}</p>
+                        </div>
+                        <a href="{% url 'worksdetail' work.id %}" class="custom-btn btn">Devamını Gör</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% include 'partials/footer.html' %}
+{% endblock %}   

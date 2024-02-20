@@ -6,9 +6,9 @@
         <div class="custom-form ad-form mb-lg-0">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 style="color: var(--primary-color);">{{ post.title }}</h3>
-                    <small class="text-secondary">{{ post.date_post }}</small>
-                    <p class="my-2" style="color: black; font-size: 20px;">{{ post.content }}</p>
+                    <h3 style="color: var(--primary-color);">{{ work.title }}</h3>
+                    <small class="text-secondary">{{ work.date_post }}</small>
+                    <p class="my-2" style="color: black; font-size: 20px;">{{ work.content }}</p>
                 </div>
             </div>
             <button onclick="window.history.back()" class="back-to-page-btn">&#10006;</button>
@@ -16,8 +16,5 @@
     </div>
 </section>  
 {% endblock %}  
-            
-            
-
 {% include 'partials/footer.html' %}
 </body>

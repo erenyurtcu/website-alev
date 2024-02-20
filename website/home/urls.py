@@ -17,6 +17,7 @@ urlpatterns = [
     path("iletisim", views.contact, name="contact"),
     path('x/', views.e_mail_sent, name='e-mail-sent'),
     path("calismalar", views.works, name="works"),
+    path("calisma-<int:pk>/" , views.works_detail, name="worksdetail"),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
