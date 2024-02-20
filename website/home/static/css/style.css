@@ -959,6 +959,40 @@ strong {
   line-height: 1.7;
 }
 
+/*---------------------------------------
+  DETAIL              
+-----------------------------------------*/
+
+.detail-section {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 179, 215, 0.6);
+  /*background: linear-gradient(to top, var(--secondary-color) 88%, #FAF8EF 100%);*/
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.175); 
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.detail-section::after {
+  content: "";
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -160px;
+  right: -120px;
+  width: 350px;
+  height: 350px;
+  z-index: 0; /* Updated z-index to place the ball behind the form */
+}
+
+.detail-section .custom-block-body {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.detail-section .custom-block-body p {
+  line-height: 1.7;
+}
 
 /*---------------------------------------
   NEWS         
@@ -1426,7 +1460,8 @@ button .form-control{
 }
 
 .custom-form button[type="submit"]:hover,
-.custom-form button[type="submit"]:focus {
+.custom-form button[type="submit"]:focus,
+.custom-form button[type="submit"]:active{
   background: var(--secondary-color);
   border-color: transparent;
 }

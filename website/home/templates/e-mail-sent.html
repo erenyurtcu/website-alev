@@ -26,22 +26,51 @@
     color: var(--primary-color);
     transition: opacity 2s ease;
     position: relative; /* Add relative positioning */
-}
+    }
 
-.anaSayfa {
-    position: absolute;
-    bottom: 38%; /* Position at the bottom */
-    width: 100%; /* Ensure it takes up full width */
-    text-align: center;
-    opacity: 0; /* Initially transparent */
-    transition: opacity 3s ease;
-}
+    .anaSayfa {
+        position: absolute;
+        bottom: 38%; /* Position at the bottom */
+        width: 100%; /* Ensure it takes up full width */
+        text-align: center;
+        opacity: 0; /* Initially transparent */
+        transition: opacity 3s ease;
+    }
+    @media only screen and (max-width: 768px) {
+        .anaSayfa {
+            top: 53%; /* Adjust bottom position for smaller screens */
+        }
+        .centered-content {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%; /* Limit width to prevent overflow */
+            max-height: 100%; /* Limit height to prevent overflow */
+            overflow: auto; /* Add scrolling if content exceeds container */
+        }
 
-/* Show the elements */
-.centered-content.show,
-.anaSayfa.show {
-    opacity: 1;
-}
+    }
+
+    @media only screen and (max-width: 480px) {
+        .anaSayfa {            
+            top: 53%; /* Adjust bottom position for smaller screens */
+        }
+        .centered-content {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%; /* Limit width to prevent overflow */
+            max-height: 100%; /* Limit height to prevent overflow */
+            overflow: auto; /* Add scrolling if content exceeds container */
+        }
+    }
+
+    .centered-content.show,
+    .anaSayfa.show {
+        opacity: 1;
+    }
 
 
 
