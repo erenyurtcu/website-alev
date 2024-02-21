@@ -1,8 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="tr">
-{% include 'partials/base.html' %}
-
+{% include 'e-mail-sent/base.html' %}
 <style>
     body{
         background-color: var(--section-bg-color);
@@ -14,7 +13,6 @@
     .color-home:hover{
         color: var(--primary-color);
     }
-
     .centered-content {
     display: flex;
     justify-content: center;
@@ -27,7 +25,6 @@
     transition: opacity 2s ease;
     position: relative; /* Add relative positioning */
     }
-
     .anaSayfa {
         position: absolute;
         bottom: 38%; /* Position at the bottom */
@@ -322,7 +319,6 @@
         document.getElementById("goHome").classList.add("show");
     }, 6500); 
 </script>
-
 <body>
     <div id="mail-container">
         <div id="line-container">
@@ -334,7 +330,6 @@
         </div>
         <div id="mail"></div>
     </div>
-
     <div>
         <h1 class="centered-content" id="e-mail-sent">E-POSTA GÖNDERİLDİ</h1>
         <h4 class="anaSayfa" id="goHome"><a href="{% url 'home'%}" class="color-home">Ana Sayfaya Dön</a></h4>

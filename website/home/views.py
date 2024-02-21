@@ -49,7 +49,7 @@ def post_detail(request,pk):
     return render(request, "blog/post-detail.html", context)
 
 def e_mail_sent(request):
-    return render(request,"e-mail-sent.html")
+    return render(request,"e-mail-sent/e-mail-sent.html")
 
 def works(request):
     works = PostWorksModel.objects.all() 
