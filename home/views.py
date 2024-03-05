@@ -23,14 +23,14 @@ def contact(request):
             form.save()
             send_mail(  'Your message has been received',
                         'Thank you for contacting us. We have received your message.',
-                        'djangosmtpdeneme@gmail.com',
+                        'furkanbtng@gmail.com',
                         [form.cleaned_data['email']])
             
             send_mail(
                 'Websitenizde Yeni Bir İletişim Talebi',
                 f'İsim: {form.cleaned_data["name"]}\nEmail: {form.cleaned_data["email"]}\nKonu: {form.cleaned_data["subject"]}\nMesaj: {form.cleaned_data["content"]}',
-                'djangosmtpdeneme@gmail.com', 
-                ['djangosmtpdeneme@gmail.com'], 
+                'furkanbtng@gmail.com', 
+                ['furkanbtng@gmail.com'], 
             )
 
             return redirect('e-mail-sent')
